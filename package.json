@@ -13,6 +13,7 @@
   },
   "license": "Apache-2.0",
   "scripts": {
+    "bdd": "npx cucumber-js -p test_runner --tags @demo",
     "ctest": "playwright test --config=tests/library/playwright.config.ts --project=chromium",
     "ftest": "playwright test --config=tests/library/playwright.config.ts --project=firefox",
     "wtest": "playwright test --config=tests/library/playwright.config.ts --project=webkit",
@@ -99,5 +100,9 @@
     "ws": "^8.5.0",
     "xml2js": "^0.4.23",
     "yaml": "^1.10.2"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^8.9.0",
+    "ts-node": "^10.9.1"
   }
 }
