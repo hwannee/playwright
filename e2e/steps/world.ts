@@ -8,7 +8,7 @@ setDefaultTimeout(60000);
 
 Before(async () => {
     try {
-        browser = await chromium.launch({ headless: false, slowMo: 500 });
+        browser = await chromium.launch({ headless: false });
         const context = await browser.newContext();
         page = await context.newPage();
         await page.goto("https://todomvc.com/examples/react/#/");
