@@ -1,13 +1,12 @@
 import { Given, When, Then } from "@cucumber/cucumber"
 import { page } from "./world"
-import { expect, Page } from "@playwright/test"
-import { test } from "../fixtures/todo-fixture" // fixture doesn't work with cucumber BDD
+import { expect } from "@playwright/test"
 import TodoPage from "../pages/todo-page";
 
 const todoPage = new TodoPage(page);
 
 // Scenario: Verify a todo item gets updated with the new changes. 
-Given('I have created a todo item', async () => {
+Given('I have created todo items', async () => {
     await todoPage.createDefaultTodos(page);
 });
 
