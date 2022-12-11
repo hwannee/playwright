@@ -34,4 +34,9 @@ export default class TodoPage {
         }).toContain(title);
     }
 
+    async checkNumberOfCompletedTodos(page: Page, expected: number) {
+        await expect.poll(() => {
+            return page.evaluate(() => JSON.parse(localStorage['react-todos']).filter((i: { completed: any; }) => i.completed).length);
+        }).toBe(expected);
+    }
 }
